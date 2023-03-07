@@ -1,0 +1,37 @@
+if [ -d "$HOME/apps/visualvm/bin" ] ; then
+    PATH="$HOME/apps/visualvm/bin:$PATH"
+fi
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+if [ -d "$HOME/apps/node/bin" ] ; then
+    PATH="$HOME/apps/node/bin:$PATH"
+fi
+if [ -d "$HOME/apps/emacs/bin" ] ; then
+    PATH="$HOME/apps/emacs/bin:$PATH"
+fi
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/apps/open-jdk11/bin" ] ; then
+    PATH="$HOME/apps/open-jdk11/bin:$PATH"
+fi
+
+if [ -d "$HOME/apps/gradle/bin" ] ; then
+    PATH="$HOME/apps/gradle/bin:$PATH"
+fi
+
+export JAVA_HOME="$HOME/apps/open-jdk11"
+export ALTERNATE_EDITOR=""
+export EDITOR="emacsclient -t"                  # $EDITOR opens in terminal
+export VISUAL="emacsclient -c -a emacs"         # $VISUAL opens in GUI mode
+
+export KUBECONFIG=$(for i in $(find $HOME/.kube/ -iname '*config') ; do echo -n ":$i"; done | cut -c 2-)

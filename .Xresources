@@ -3,6 +3,7 @@
 xterm*faceName: IBM3270SemiCondensed
 xterm*faceSize: 12
 xterm*renderFont: true
+xterm*metaSendsEscape:  true
 
 !Taken from blog series: http://www.futurile.net/2016/06/14/xterm-setup-and-truetype-font-configuration/
 xterm*VT100.Translations: #override \
@@ -34,3 +35,6 @@ xterm*color14:     rgb:71/be/be
 xterm*color15:    rgb:ff/ff/ff
 
 xterm*cursorColor: #d6d6d6
+
+XTerm*VT100*metaSendsEscape: true
+xterm*termName: xterm-256color
